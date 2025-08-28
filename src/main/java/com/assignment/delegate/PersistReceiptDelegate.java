@@ -18,7 +18,7 @@ public class PersistReceiptDelegate implements JavaDelegate {
         FeeReceipt receipt = new FeeReceipt();
         receipt.setProviderOrderId((String) execution.getVariable("providerOrderId"));
         receipt.setStudentId((String) execution.getVariable("studentId"));
-        receipt.setAmount(Double.parseDouble((String)execution.getVariable("amount")));
+        receipt.setAmount((Double) execution.getVariable("amount"));
         receipt.setPaymentDate(LocalDateTime.now());
         receipt.setStatus("PAID");
         repository.save(receipt);
